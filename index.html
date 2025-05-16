@@ -11,9 +11,60 @@
     .no_conviene{
       background: rgba(250,0,0,0.3);
     }
+
+
+.no_conviene::after
+ {
+    content: 'X';
+    display: block;
+    position: relative;
+    color: #fff;
+    background: red;
+    border-radius: 100%;
+    height: 40px;
+    width: 40px;
+    padding: 10px;
+    margin: auto;
+}
     .conviene{
       background: rgba(0,250,0,0.3);
     }
+
+
+.conviene::after
+ {
+    content: '✓';
+    display: block;
+    position: relative;
+    color: #fff;
+    background: green;
+    border-radius: 100%;
+    height: 40px;
+    width: 40px;
+    padding: 10px;
+    margin: auto;
+}
+
+
+    .stokpositivo{
+      background: rgba(0,0,250,0.3);
+    }
+
+
+.stokpositivo::after
+ {
+    content: '+';
+    display: block;
+    position: relative;
+    color: #fff;
+    background: blue;
+    border-radius: 100%;
+    height: 40px;
+    width: 40px;
+    padding: 10px;
+    margin: auto;
+}
+   
   </style>
 </head>
 <body>
@@ -135,7 +186,7 @@
 
       <div class="col">
         <div class="card h-100 text-center">
-          <div class="card-body">
+          <div id="stokhojas" class="card-body">
             <h5 class="card-title">Hojas en Stock</h5>
             <p class="hojasStock fs-4 fw-bold"></p>
           </div>
@@ -194,6 +245,7 @@ function calcular(){
       $('#Ganancia_1').removeClass('no_conviene');
       $('#Ganancia_2').addClass('no_conviene');
       $('#Ganancia_2').removeClass('conviene');
+      $('#stokhojas').addClass('stokpositivo');
 
     }
   }
@@ -204,6 +256,7 @@ function calcular(){
       $('#Ganancia_1').removeClass('conviene');
       $('#Ganancia_2').addClass('conviene');
       $('#Ganancia_2').removeClass('no_conviene');
+      $('#stokhojas').addClass('stokpositivo');
     /*var diferencia = Ganancia_2 - Ganancia_1;
     console.log(diferencia)
 
@@ -218,10 +271,6 @@ function calcular(){
 
 }
   
-
-
-</script>
-</html>
 
 
 </script>
